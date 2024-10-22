@@ -196,7 +196,7 @@ footer {
     display: none;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 690px) {
     nav ul {
         flex-direction: column;
     }
