@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media screen and (min-width: 0px) and (max-width:650px) {
+    
+    #mainCad{
+        width: 450px;
+        height: 79vh;
+        
+        
+    }
+
+    #formulario {
+        height: 60%;
+        width: 100%;
+        margin-top: 301px;
+        transition: width 0.1s, height 0.2s;
+        transition-timing-function: ease-in-out;
+        
+    }
+    #imagem{
+        
+        width: 385px;
+        transition: width 0.2s, height 0.2s;
+        transition-timing-function: ease-in-out;
+        
+    }
+    #acess {
+        position: relative;
+        bottom: -1250%;
+        left: -78%;
+    }
+
+    #alertDiv{
+        margin-top: 50px;
+    }
+    
+}
+
+@media screen and (min-width: 651px) and (max-width:1920px) {
+
+    #mainCad{
+        width: 900px;
+        transition: width 0.3s, height 0.3s;
+        transition-timing-function: ease-in-out;
+    }
+    #imagem {
+       pointer-events: none;
+       
+    }
+
+   
+}
