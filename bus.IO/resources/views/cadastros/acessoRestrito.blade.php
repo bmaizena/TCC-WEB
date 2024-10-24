@@ -15,7 +15,7 @@
             border-collapse: collapse;
             border-radius: 10px;
             margin: auto;
-            box-shadow: 3px 3px 3px 5px rgb(0,0,0,4%);
+            box-shadow: 3px 3px 3px 5px rgb(0,0,0,2%);
             font-size:14px;
             width:90%;
             
@@ -29,21 +29,32 @@
             background-color: rgb(192,192,192, 0.433);
         }
 
+        tr:nth-child(odd) {
+            background-color: rgb(192,192,192, 0.633);
+        }
+
+        tr:nth-last-child(1) td:nth-last-child(6) {
+            border-radius: 0px 0px 0px 10px;
+        }
+
+        tr:nth-last-child(1) td:nth-last-child(1) {
+            border-radius: 0px 0px 10px 0px;
+        }
+
         .titulo{
             font-weight: bold;
             font-size:15px;
-            
+            padding: 5px;
         }
         #id {
+            
             border-radius: 10px 0px 0px 0px;
         }
         #acoes {
             border-radius: 0px 10px 0px 0px;
         }
 
-        td:nth-child(even) {
-            background-color: rgb(192,192,192, 0.433);
-        }
+       
         
     </style>
 </head>
@@ -72,13 +83,13 @@
             <td>{{ $cliente['email'] }}</td> 
             <td>{{ $cliente['cpf'] }}</td> 
 
-            <td class="justify-center border border-none flex ">
-                <a href="{{route('cadastros.edit', $cliente->id)}}" >
-                    <x-eva-edit-2-outline class=" w-7 m-1 text-ambar-500 hover:text-red-400"/>
+            <td class="text-center">
+                <a class="inline-block" href="{{route('cadastros.edit', $cliente->id)}}" >
+                    <x-eva-edit-2-outline class=" w-7 m-1 text-ambar-500 hover:text-slate-400"/>
                 </a>
                 
-                <a href="#" onclick="deleteId( {{$cliente-> id}} )">
-                    <x-heroicon-o-trash class="w-7 m-1  text-red-500 hover:text-red-400"/>
+                <a class="inline-block" href="#" onclick="deleteId( {{$cliente-> id}} )">
+                    <x-heroicon-o-trash class="w-7 m-1 text-red-500 hover:text-red-400"/>
                 </a>
                 <form class="d-none" id="form-destroy-{{$cliente->id}}" action="{{ route('cadastros.destroy', $cliente->id ) }}" method="POST">
                     @csrf
