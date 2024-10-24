@@ -9,11 +9,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
         body{
             text-align: center;
-            background-color:'red';
             font-family: "Montserrat", sans-serif;
         }
         table {
             border-collapse: collapse;
+            border-radius: 10px;
             margin: auto;
             box-shadow: 3px 3px 3px 5px rgb(0,0,0,4%);
             font-size:14px;
@@ -21,9 +21,8 @@
             
         }
         td{
-            border: 1px solid black;
-            padding: 8px;
-        
+            padding: 5px 3px 5px 3px;
+            
         }
 
         tr:nth-child(even) {
@@ -33,7 +32,17 @@
         .titulo{
             font-weight: bold;
             font-size:15px;
-           
+            
+        }
+        #id {
+            border-radius: 10px 0px 0px 0px;
+        }
+        #acoes {
+            border-radius: 0px 10px 0px 0px;
+        }
+
+        td:nth-child(even) {
+            background-color: rgb(192,192,192, 0.433);
         }
         
     </style>
@@ -46,12 +55,12 @@
         <table >
         
             <tr>
-                <td class="titulo" style="background-color: #76b0ea;">ID</td>
-                <td class="titulo" style="background-color: #76b0ea;">NOME</td>
+                <td class="titulo" id="id" style="background-color: #76b0ea;">ID</td>
+                <td class="titulo" style="background-color: #6fa9e3;">NOME</td>
                 <td class="titulo" style="background-color: #76b0ea;">TEL</td>
-                <td class="titulo" style="background-color: #76b0ea;">EMAIL</td>
+                <td class="titulo" style="background-color: #6fa9e3;">EMAIL</td>
                 <td class="titulo" style="background-color: #76b0ea;">CPF</td>
-                <td class="titulo"style="background-color: #73b464;" id="acoes">AÇÕES</td>
+                <td class="titulo" id="acoes" style="background-color: #73b464;" id="acoes">AÇÕES</td>
         
             </tr>
 
