@@ -268,10 +268,13 @@ footer {
                 <li><a href="#menuFunc" class=" hover:text-slate-900 hover:bg-green-500 transition duration-500 ease-in-out p-1 rounded ">Funcionalidades</a></li>
 
                 <li><a href="/cadastros/cadastro"  class=" hover:text-slate-900 hover:bg-green-500 transition duration-500 ease-in-out p-1 rounded ">Cadastro</a></li>
+                
 
                 <li><a href="{{ route('login') }}"  class=" hover:text-slate-900 hover:bg-green-500 transition duration-500 ease-in-out p-1 rounded ">Minha Conta</a></li>
 
                 <li><a href="https://wa.me/5513991225846"  class=" hover:text-slate-900 hover:bg-green-500 transition duration-500 ease-in-out p-1 rounded" id="contato">Contato</a></li>
+
+                
 
             </ul>
             <div id="hamburger">&#9776;</div>

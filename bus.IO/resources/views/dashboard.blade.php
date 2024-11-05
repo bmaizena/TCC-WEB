@@ -22,6 +22,15 @@
                 </div>
             </div>
 
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-2">
+                
+                <div class="p-6 text-gray-900 flex items-center ">
+                    <a href="exp://192.168.86.33:8081" class="hover:text-blue-400">
+                        Ir para Aplicativo (se estiver usando dispoitivo móvel)
+                    </a>
+                </div>
+            </div>
+
             @can('is-admin')
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-2">
                 

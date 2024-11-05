@@ -62,7 +62,7 @@
 
 
         
-        <h2 class="text-2xl font-bold p-2 m-2">Lista de Usuarios</h2>
+        <h2 class="text-2xl font-bold p-2 m-2 text-center">Lista de Usuarios</h2>
         <table >
         
             <tr>
