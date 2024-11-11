@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BusioClientes;
 use App\Models\User;
+use App\Models\Pontos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -39,6 +40,31 @@ public function acessoRestrito(){
     }
     $clientes=User::all();
     return view('cadastros.acessoRestrito', compact('clientes'));
+}
+
+//pag cadastro dos pontos
+public function cadastroPontos(){
+
+    if(Gate::denies('is-admin')){
+        dd('bloqueado');
+    }
+    return view('cadastros.cadastroPontos');
+}
+
+public function storePontos(Request $request){
+    if(Gate::denies('is-admin')){
+        dd('bloqueado');
+    }
+    Pontos::create(
+        [
+            'titulo' => $request->titulo,
+            'descricao' => $request->descricao,
+            'latitude' => $request->latitude,
+            'longitude' => $request->longitude,
+            'bairro' => $request->bairro
+        ]
+        );
+    return redirect('/cadastros/pontos');
 }
 
 

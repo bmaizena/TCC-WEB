@@ -23,10 +23,15 @@
             </div>
 
             @can('is-admin')
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-2">
-                
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-2"> 
                 <div class="p-6 text-gray-900 flex items-center ">
                     <a href="/cadastros/acessoRestrito" class="hover:text-blue-400">Lista de Usuarios</a>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-2">
+                <div class="p-6 text-gray-900 flex items-center ">
+                    <a href="/cadastros/pontos" class="hover:text-blue-400">Cadastrar Pontos</a>
                 </div>
             </div>
             @endcan
