@@ -33,6 +33,7 @@ public function login(){
     return view('cadastros.login');
 }
 
+//controle do acessoRestrito
 public function acessoRestrito(){
 
     if(Gate::denies('is-admin')){
@@ -51,17 +52,25 @@ public function cadastroPontos(){
     return view('cadastros.cadastroPontos');
 }
 
+//func para adicionar pontos
 public function storePontos(Request $request){
     if(Gate::denies('is-admin')){
         dd('bloqueado');
     }
+
+    $schedulesArray = explode(',', $request->schedules);
+    $schedulesArray = array_map('trim', $schedulesArray);
+
     Pontos::create(
         [
-            'titulo' => $request->titulo,
-            'descricao' => $request->descricao,
+            'name' => $request->name,
+            'description' => $request->description,
             'latitude' => $request->latitude,
             'longitude' => $request->longitude,
-            'bairro' => $request->bairro
+            'arrivalPrediction' => $request->arrivalPrediction,
+            'departurePrediction' => $request->departurePrediction,
+            'schedules' => $schedulesArray, // Laravel salva como JSON devido ao cast
+            'fare' => $request->fare,
         ]
         );
     return redirect('/cadastros/pontos');
