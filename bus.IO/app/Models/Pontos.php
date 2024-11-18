@@ -10,10 +10,17 @@ class Pontos extends Model
     use HasFactory;
 
     protected $fillable = [
-        'titulo',
-        'descricao',
+        'name',
+        'description',
         'latitude',
         'longitude',
-        'bairro'
+        'arrivalPrediction',
+        'departurePrediction',
+        'schedules',
+        'fare',
+    ];
+
+    protected $casts = [
+        'schedules' => 'array',
     ];
 }

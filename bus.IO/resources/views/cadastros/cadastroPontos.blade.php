@@ -15,15 +15,15 @@
         <h2 class="text-2xl font-bold font-mono text-center mb-4">Cadastre um Ponto:</h2>
 
         <div class="self-center w-max" >
-            <x-input-label for="titulo" :value="__('Título')"  />
-            <x-text-input  id="titulo"  type="text" name="titulo" required autofocus autocomplete="titulo" />
-            <x-input-error :messages="$errors->get('titulo')" class="mt-2" />
+            <x-input-label for="name" :value="__('Nome')"  />
+            <x-text-input  id="name"  type="text" name="name" required autofocus autocomplete="name" />
+            <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
         <div class="self-center w-max" >
-            <x-input-label for="descricao" :value="__('Descrição')"  />
-            <x-text-input  id="descricao"  type="text" name="descricao" required autofocus autocomplete="descricao" />
-            <x-input-error :messages="$errors->get('descricao')" class="mt-2" />
+            <x-input-label for="description" :value="__('Descrição')"  />
+            <x-text-input  id="description"  type="text" name="description" required autofocus autocomplete="description" />
+            <x-input-error :messages="$errors->get('description')" class="mt-2" />
         </div>
 
         <div class="self-center w-max" >
@@ -39,9 +39,27 @@
         </div>
 
         <div class="self-center w-max" >
-            <x-input-label for="bairro" :value="__('Bairro')"  />
-            <x-text-input  id="bairro"  type="text" name="bairro" required autofocus autocomplete="bairro" />
-            <x-input-error :messages="$errors->get('bairro')" class="mt-2" />
+            <x-input-label for="arrivalPrediction" :value="__('Previsão de Chegada')"  />
+            <x-text-input  id="arrivalPrediction"  type="text" name="arrivalPrediction" required autofocus autocomplete="arrivalPrediction" placeholder="Ex: 5 minutos" />
+            <x-input-error :messages="$errors->get('arrivalPrediction')" class="mt-2" />
+        </div>
+
+        <div class="self-center w-max" >
+            <x-input-label for="departurePrediction" :value="__('Previsão de Saída')"  />
+            <x-text-input  id="departurePrediction"  type="text" name="departurePrediction" required autofocus autocomplete="departurePrediction" placeholder="Ex: 2 minutos" />
+            <x-input-error :messages="$errors->get('departurePrediction')" class="mt-2" />
+        </div>
+
+        <div class="self-center w-max" >
+            <x-input-label for="schedules" :value="__('Horários')"  />
+            <x-text-input  id="schedules"  type="text" name="schedules" required autofocus autocomplete="schedules" placeholder="Ex: 7:15, 7:30, 7:45" />
+            <x-input-error :messages="$errors->get('schedules')" class="mt-2" />
+        </div>
+
+        <div class="self-center w-max" >
+            <x-input-label for="fare" :value="__('Preço da Passagem')"  />
+            <x-text-input  id="fare"  type="text" name="fare" required autofocus autocomplete="fare" placeholder="Ex: R$2,50" />
+            <x-input-error :messages="$errors->get('fare')" class="mt-2" />
         </div>
 
         <div class="self-center w-max mt-3">

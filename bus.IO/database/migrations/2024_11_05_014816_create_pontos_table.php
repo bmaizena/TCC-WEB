@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('pontos', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->string('descricao');
+            $table->string('name');
+            $table->string('description');
             $table->string('latitude');
             $table->string('longitude');
-            $table->string('bairro');
+            $table->string('arrivalPrediction');
+            $table->string('departurePrediction');
+            $table->json('schedules'); //salva como JSON
+            $table->string('fare');
             $table->timestamps();
         });
     }
