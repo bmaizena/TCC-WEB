@@ -10,3 +10,5 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/pontos', [ApiPontosController::class, 'index']);
 
+Route::delete('/pontos/{id}', [ApiPontosController::class, 'destroy'])->name('pontos.destroy');
+

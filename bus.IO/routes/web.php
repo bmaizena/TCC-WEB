@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ApiPontosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TccController;
@@ -14,6 +15,8 @@ Route::post('/cadastros/recCadastro', [TccController::class, 'recCadastro']);
 Route::get('/cadastros/recRestrito', [TccController::class, 'recRestrito']);
 
 Route::delete('/cadastros/{id}', [TccController::class, 'destroy'])->name('cadastros.destroy');
+
+
 
 Route::get('/cadastros/acessoRestrito', [TccController::class, 'acessoRestrito'])->middleware('auth')->can('is-admin');
 

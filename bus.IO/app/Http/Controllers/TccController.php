@@ -49,7 +49,8 @@ public function cadastroPontos(){
     if(Gate::denies('is-admin')){
         dd('bloqueado');
     }
-    return view('cadastros.cadastroPontos');
+    $pontos=Pontos::all();
+    return view('cadastros.cadastroPontos',compact('pontos'));
 }
 
 //func para adicionar pontos
@@ -57,7 +58,7 @@ public function storePontos(Request $request){
     if(Gate::denies('is-admin')){
         dd('bloqueado');
     }
-
+    
     $schedulesArray = explode(',', $request->schedules);
     $schedulesArray = array_map('trim', $schedulesArray);
 
@@ -76,47 +77,6 @@ public function storePontos(Request $request){
     return redirect('/cadastros/pontos');
 }
 
-
-
-/*public function recCadastro(Request $request){
-
-    $rules = [
-        'nome' => 'required|min:5',
-        'dt_nasc' =>'required',
-        'email' =>'required',
-        'telefone' =>'required',
-        'endereco' =>'required',
-        'cpf' =>'required',
-        'senha' =>'required'
-    ];
-
-    $validator = Validator::make($request->all(), $rules);
-
-    if($validator->fails()){
-
-        return redirect('cadastros/cadastro')->withInput()->withErrors($validator);
-    }
-
-
-    BusioClientes::create(
-        $request->all()
-    );
-    return redirect('cadastros/cadastro') ->with('success', 'Cadastro feito com sucesso'); 
-}
-
-
-public function recRestrito(Request $request){
-
-    $tcctasks = BusioClientes::where('senha', 'LIKE', "%projetotcc%") 
-    ->where('email', 'LIKE', "%danielsallesse@gmail.com%")
-    ->get();
-    $txtSenha = $request->senha;
-    $txtEmail = $request->email;
-
-    $clientes=BusioClientes::all();
-
-    return view('/cadastros/acessoRestrito', compact(['tcctasks','txtSenha','txtEmail', 'clientes']));
-}*/
 
 public function destroy($id){
 

@@ -12,5 +12,13 @@ class ApiPontosController extends Controller
         $pontos=Pontos::all();
         return $pontos->toJson();
     }
+    public function destroy($id){
+
+        $pontos = Pontos::findOrFail( $id);
+        $pontos->delete();
+    
+        return redirect('/cadastros/pontos')->with('success', 'Tarefa excluida com sucesso');
+    
+    }
 
 }

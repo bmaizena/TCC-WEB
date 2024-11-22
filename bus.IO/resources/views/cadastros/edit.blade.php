@@ -7,6 +7,7 @@
     @vite('resources/css/app.css')
 
     <title>Agenda de Tarefas</title>
+    <link rel="shortcut icon" href="/logo-bus-cortado.png" type="image/x-icon">
 </head>
 <body class="bg-slate-100">
 
