@@ -12,7 +12,7 @@
 <body class="bg-slate-100">
 
     <main class="flex justify-center">
-        <section class="bg-zinc-100 mt-20 w-3/4 p-4 shadow-lg shadow-indigo-200 rounded-lg ">
+        <section class="bg-zinc-100 mt-20 w-3/4 p-4 shadow-lg shadow-zinc-200 rounded-lg ">
 
         <h1 class="text-2xl text-blue-400 text-center">Editar Dados</h1>
 
@@ -57,7 +57,7 @@
 
                 <div class="mb-4 mt-4 flex justify-end gap-2">
                     
-                    <input type="submit" value="Salvar Alterações" class = "rounded-md bg-green-500 p-2 text-indigo-50 shadow-md shadow-green-500/50 hover:bg-green-600 min-w-auto cursor-pointer"/>
+                    <input type="submit" value="Salvar Alterações" class = "rounded-md bg-cyan-500 p-2 text-indigo-50 shadow-md shadow-cyan-500/50 hover:bg-cyan-600 min-w-auto cursor-pointer"/>
 
                     <a href="/cadastros/acessoRestrito" class = "text-center rounded-md bg-red-600 p-2 text-red-50 shadow-md shadow-red-700/50 hover:bg-red-500 min-w-auto ">Cancelar</a>
                 </div>

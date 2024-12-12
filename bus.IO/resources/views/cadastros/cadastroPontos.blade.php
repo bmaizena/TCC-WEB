@@ -6,6 +6,7 @@
     <title>Cadastro Ponto</title>
     <link rel="shortcut icon" href="/logo-bus-cortado.png" type="image/x-icon">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
         table {
             border-collapse: collapse;
             border-radius: 10px;
@@ -13,6 +14,7 @@
             box-shadow: 3px 3px 3px 5px rgb(0,0,0,2%);
             font-size:14px;
             width:90%;
+            font-family: "Montserrat", sans-serif;
             
         }
         td{
@@ -28,6 +30,14 @@
             background-color: rgb(192,192,192, 0.633);
         }
 
+        tr:nth-last-child(1) td:nth-last-child(9) {
+            border-radius: 0px 0px 0px 10px;
+        }
+
+        tr:nth-last-child(1) td:nth-last-child(1) {
+            border-radius: 0px 0px 10px 0px;
+        }
+
         .titulo{
             font-weight: bold;
             font-size:15px;
@@ -37,16 +47,20 @@
             
             border-radius: 10px 0px 0px 0px;
         }
+        #acoes {
+            
+            border-radius: 0px 10px 0px 0px;
+        }
     </style>
     @vite('resources/css/app.css')
 </head>
-<body class="bg-zinc-300 grid justify-items-center">
+<body class="bg-slate-100 grid justify-items-center">
 
 <main id="mainCad" class="bg-white grid justify-items-center rounded-2xl shadow-2xl relative border border-slate-50 mt-9">
 
-    <form action="/cadastros/storePontos" method="POST" class=" flex flex-col bg-slate-50 p-5 rounded-2xl shadow-md w-full">
+    <form action="/cadastros/storePontos" method="POST" class=" flex flex-col bg-zinc-100 p-5 rounded-2xl shadow w-full">
         @csrf
-        <h2 class="text-2xl font-bold font-mono text-center mb-4">Cadastre um Ponto:</h2>
+        <h2 class="text-2xl text-center mb-4">Cadastro de Ponto</h2>
 
         <div class="self-center w-max" >
             <x-input-label for="name" :value="__('Nome')"  />
@@ -110,19 +124,19 @@
 
 <a href="/dashboard" class = "text-center rounded-md bg-blue-600 p-2 mt-3 text-red-50 shadow-md shadow-blue-700/50 hover:bg-blue-500 ">Voltar</a>
 
-<h2 class="text-2xl font-bold p-2 m-2 text-center">Lista de Pontos</h2>
+<h2 class="text-2xl p-2 m-2 text-center">Lista de Pontos</h2>
         <table >
         
             <tr>
-                <td class="titulo" style="background-color: #6fa9e3;">NOME</td>
+                <td class="titulo" id="id" style="background-color: #6fa9e3;">NOME</td>
                 <td class="titulo" style="background-color: #76b0ea;">DESCRIÇÃO</td>
                 <td class="titulo" style="background-color: #6fa9e3;">LAT</td>
                 <td class="titulo" style="background-color: #76b0ea;">LONG</td>
-                <td class="titulo" id="acoes" style="background-color: #6fa9e3;">PREV DE CHEGADA</td>
-                <td class="titulo" id="acoes" style="background-color: #76b0ea;">PREV DE SAIDA</td>
-                <td class="titulo" id="acoes" style="background-color: #6fa9e3;">HORARIOS</td>
-                <td class="titulo" id="acoes" style="background-color: #76b0ea;">PREÇO</td>
-                <td class="titulo" id="acoes" style="background-color: #73b464;" id="acoes">AÇÕES</td>
+                <td class="titulo" style="background-color: #6fa9e3;">PREV DE CHEGADA</td>
+                <td class="titulo" style="background-color: #76b0ea;">PREV DE SAIDA</td>
+                <td class="titulo" style="background-color: #6fa9e3;">HORARIOS</td>
+                <td class="titulo" style="background-color: #76b0ea;">PREÇO</td>
+                <td class="titulo" id="acoes" style="background-color: #73b464;">AÇÕES</td>
         
             </tr>
 
